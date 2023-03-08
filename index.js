@@ -8,7 +8,7 @@ altrimenti il numero di libri corrispondenti.
 Come per l’esercizio precedente, impostate i valori in variabili.*/
 
 let titolo_cerca = "Div";
-let trovati = 0;
+let lib_trov = 0;
 
 
 let libreria =  [{
@@ -27,15 +27,15 @@ let libreria =  [{
 libreria.forEach(function (libro, titolo_cerca) {
     const titolo_true = libro.titolo;
     
+    console.log(lib_trov);
     console.log(titolo_true);
     console.log(titolo_cerca);
     console.log(titolo_true.toLowerCase().includes(titolo_cerca)? "trovato":"non trovato");
 
     if (titolo_true.toLowerCase().includes(titolo_cerca)) {
-        trovati++;
+        lib_trov++;
     }
-    }
-    console.log(trovati);
+    console.log(lib_trov);
     //console.log(titolo_true.toLowerCase().includes(titolo_cerc)? "trovato":"non trovato")
 });
 //let titolo_cerc="div"
