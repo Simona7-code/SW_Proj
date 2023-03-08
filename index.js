@@ -80,3 +80,111 @@ person["lastName"] = "Doe";
 person["age"] = 46;
 person.length;     // Will return 0
 person[0];         // Will return undefined
+
+
+//VEDI https://www.w3schools.com/jsref/jsref_reduce.asp E RECUPERA COSE IERI
+
+
+// OGGETTI-----------------------------------
+
+/*In real life, a car is an object.
+A car has properties like weight and color, and methods like start and stop:
+
+PROPRIETA'
+car.name = Fiat
+car.model = 500
+car.weight = 850kg
+car.color = white	
+METODI
+car.start()
+car.drive()
+car.brake()
+car.stop()
+
+DEF:*/
+
+const person4 = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+/* PER ACCEDERE O UNO O L ALTRO:
+objectName.propertyName
+objectName["propertyName"]*/
+
+//A method is a function stored as a property.
+const person5 = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+/*In the example above, this refers to the person object.
+
+I.E. this.firstName means the firstName property of this.
+
+I.E. this.firstName means the firstName property of person.
+SPIEGAZIONE DI THIS-->https://www.w3schools.com/js/js_objects.asp 
+
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.*/
+
+//CLASSES-----------------------------------------------
+
+//Use the keyword class to create a class. Always add a method named constructor():
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+/*The example above creates a class named "Car".
+
+The class has two initial properties: "name" and "year".*/
+// PER CREARE E ISTANZIARE DUE NUOVI OGGETTI DI CLASSE AUTO (invoca automaticamente il costruttore tramite new)
+let myCar1 = new Car("Ford", 2014);
+let myCar2 = new Car("Audi", 2019);
+
+
+/*per definire nuovi metodi:
+class Classeprova {
+  constructor() { ... }
+  method_1() { ... }
+  method_2() { ... }
+  method_3() { ... }
+}
+es Create a Class method named "age", that returns the Car age:*/
+
+class Car3 {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    //get fullyear prende l'anno corrente
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar3 = new Car3("Ford", 2014);
+document.getElementById("demo").innerHTML = "My car is " + myCar3.age() + " years old.";
+
+//per renderlo più generale (non prende l anno corrente)
+class Car4 {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age(x) {
+    return x - this.year;
+  }
+}
+
+let date = new Date();
+let year = date.getFullYear();
+
+let myCar4 = new Car4("Ford", 2014);
+document.getElementById("demo").innerHTML="My car is " + myCar4.age(year) + " years old.";
