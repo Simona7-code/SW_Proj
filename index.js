@@ -30,13 +30,14 @@ class Libro {
 
 class Archivio {
   add() {
+     //COSTRUTTORE DI OGGETTI CLASSE LIBRO 
 
-    const libro1 = new Libro("x568l",'Alice in Wonderland', "Lewis Carol", "G_G_6X" );
+    /*const libro1 = new Libro("x568l",'Alice in Wonderland', "Lewis Carol", "G_G_6X" );
     const libro2 = new Libro("x598l",'TIT', "aUT", "G_s_6X");
     const libro3 = new Libro("x798l",'TIT1', "aUT1", "G_6_6X");
     const libro4 = new Libro("x398l",'TIT2', "aUT2", "G_9_6X");
     const libro5 = new Libro("x298l",'TIT3', "aUT3", "G_0_6X");
-    console.log(libro5.tit)
+    console.log(libro5.tit)*/
   }
 
   cerca(titolo_cerca){
@@ -46,6 +47,9 @@ class Archivio {
 
  /*   //per ogni oggetto libro in array libreria
     for (let libro of libreria){
+
+
+      // COME ITERARE SU ATTRIBUTO (TITOLO) DI TUTTI GLI OGGETTI DENTRO OGGETTO (LIBRI IN ARCHIVIO)???????????______________________________________________________________
     
       //in let titolo corrente ci salvo il titolo del libro corrente nel ciclo
       let titolo_corr = libro["titolo"]
